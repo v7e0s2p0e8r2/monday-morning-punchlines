@@ -1,6 +1,6 @@
 """Monday Morning Punchlines - make.fun submission.
 
-Writes one Monday-morning joke (under 200 characters) to /output.
+Writes one Monday-morning joke (under 200 characters) to /output/entry.txt.
 """
 
 import os
@@ -15,7 +15,7 @@ def main() -> None:
     output_dir = os.environ.get("OUTPUT_DIR", "/output")
     os.makedirs(output_dir, exist_ok=True)
 
-    output_path = os.path.join(output_dir, "joke.txt")
+    output_path = os.path.join(output_dir, "entry.txt")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(JOKE + "\n")
     # make.fun collects outputs as a different user: keep them readable.
